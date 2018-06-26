@@ -5,6 +5,9 @@
     "dependencies": {
         "bootstrap": "^3.3.7",
         "custom-react-scripts": "0.2.1",
+        "mobx": "^5.0.3",
+        "mobx-react": "^5.2.3",
+        "prop-types": "^15.6.2",
         "react": "^16.1.1",
         "react-dom": "^16.1.1"
     },
