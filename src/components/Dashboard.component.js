@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 import {action, reaction, observable, observe, computed, autorun, asStructure, runInAction, toJS, values } from 'mobx';
 // Models
-// import limitsModel from 'models/limits.model';
+import bookingModel from 'models/booking.model';
 // Components
+import BookingInfo from 'components/BookingInfo.component';
 
 
 @observer
@@ -16,8 +17,6 @@ class Dashboard extends Component {
     static propTypes = {
         lang: PropTypes.string.isRequired
     };
-
-    isFetching = observable.box(false);
 
 
     componentDidMount() {
@@ -45,6 +44,7 @@ class Dashboard extends Component {
         return (
             <div className="layout__align-center">
                 Dashboard
+                <BookingInfo />
             </div>
         )
     };
