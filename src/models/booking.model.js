@@ -1,7 +1,13 @@
-import { observable } from 'mobx';
+import { observable, runInAction, keys, values } from 'mobx';
 
 
 class BookingModel {
+
+    booking = observable.map(new Map([
+        ['availableRooms', null],
+        ['checkedIn', null],
+        ['reservedRooms', null]
+    ]));
 
 
     constructor() {
@@ -9,9 +15,17 @@ class BookingModel {
     }
 
 
+    async fetchBookingTotal() {
+        const respRaw = await fetch('https://interview-booking-api.herokuapp.com/api/booking-snapshot');
+        const respParsed = await respRaw.json();
 
-    fetchBookingTotal() {
-
+        runInAction(()=> {
+            for(let prop of keys(this.booking)) {
+                if(respParsed.hasOwnProperty(prop)) {
+                    this.booking.set(prop, respParsed[prop]);
+                }
+            }
+        });
     }
 }
 
