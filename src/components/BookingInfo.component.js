@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { values, reaction, keys } from 'mobx';
+import { keys } from 'mobx';
+//MobX
+import { observer } from 'mobx-react';
 // Models
 import bookingModel from 'models/booking.model';
-import { observer } from 'mobx-react';
 
 
 @observer
@@ -10,7 +11,7 @@ class BookingInfo extends Component {
 
     infoTitles = {
         checkedIn: 'Checked in',
-        availableRooms: 'Rooms avaliable',
+        availableRooms: 'Rooms available',
         reservedRooms: 'Reserved rooms'
     };
 
@@ -21,7 +22,7 @@ class BookingInfo extends Component {
                 <div>
                     { keys(bookingModel.booking)
                         .map(bookingKey =>
-                            <div>
+                            <div key={bookingKey}>
                                 <p>{bookingModel.booking.get(bookingKey)}</p>
                                 <p>{this.infoTitles[bookingKey]}</p>
                             </div>

@@ -3,6 +3,7 @@ import styles from './App.module.scss';
 //Components
 import Dashboard from 'components/Dashboard.component';
 
+
 export default class App extends Component {
     render() {
         return (

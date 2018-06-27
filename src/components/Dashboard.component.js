@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // MobX
 import { observer } from 'mobx-react';
-import {action, reaction, observable, observe, computed, autorun, asStructure, runInAction, toJS, values } from 'mobx';
 // Components
 import BookingInfo from 'components/BookingInfo.component';
+import EmployeesChart from 'components/EmployeesChart.component';
 
 
 @observer
@@ -20,8 +20,8 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="layout__align-center">
-                Dashboard
                 <BookingInfo />
+                <EmployeesChart />
             </div>
         )
     };
