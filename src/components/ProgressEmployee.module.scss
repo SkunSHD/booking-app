@@ -1,0 +1,15 @@
+@import '../styles/vars';
+
+
+.progressEmployee :global {
+    width: 100%;
+    background: $color-big-stone;
+    height: 3px;
+    margin-top: 3px;
+
+    .content {
+        background: $color-algae-green;
+        height: 100%;
+    }
+
+}

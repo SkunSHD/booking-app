@@ -4,6 +4,9 @@ import { toJS } from 'mobx';
 import { observer } from 'mobx-react';
 // Models
 import employeesModel from 'models/employees.model';
+import styles from './EmployeesChart.module.scss';
+// Components
+import ProgressEmployee from "components/ProgressEmployee.component";
 
 
 @observer
@@ -21,15 +24,30 @@ class EmployeesChart extends Component {
     render() {
         if(!employeesModel.employeesStats.size) return 'loading...';
         return (
-            <div className="container">
-                Employees stats:
-                { this.renderEmployeesTopThree.map(employee => (
-                    <div key={employee.firstName} className="row" >
-                        <div className="col-lg">
-                            <p>{employee.firstName} {employee.lastName}; SOLD: {employee.hoursSold} hours</p>
-                        </div>
-                    </div>
-                ))}
+            <div className="row">
+                <div className={ styles.employeeChart }>
+                    <h2 className="title">Employees stats:</h2>
+                    <ul className="col-xs-8">
+                        { this.renderEmployeesTopThree.map(employee => (
+                            <li key={employee.firstName} className="item">
+
+                                <div className="col-xs-2">
+                                    <div className="img-profile-wrapper">
+                                        <img src={employee.profileImageUrl} alt="profile photo"/>
+                                    </div>
+                                </div>
+
+                                <div className="col-xs-10 item_info">
+                                    <p className="info_name">{ employee.firstName } { employee.lastName.charAt(0) }.</p>
+                                    <p className="info_hours">{ employee.hoursSold } hours</p>
+
+
+                                    <ProgressEmployee hoursSold={ employee.hoursSold } />
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         );
     }

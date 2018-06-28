@@ -22,7 +22,7 @@ class Employees {
         const respRaw = await fetch('https://interview-booking-api.herokuapp.com/api/bookings');
         const respParsed = await respRaw.json();
 
-        runInAction('UPDATE-EmployeesModel', ()=> {
+        runInAction('UPDATE-EmployeesModel-SUCCESS', ()=> {
             respParsed.forEach(visitor => {
                 if(!visitor.employee) return;
 

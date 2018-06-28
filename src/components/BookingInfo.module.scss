@@ -1,0 +1,14 @@
+@import '../styles/vars';
+
+.booking_info :global {
+    padding-bottom: 30px;
+    border-bottom: 1px solid $color-arsenic;
+    margin-bottom: 65px;
+    text-align: left;
+
+    .item {
+        font-size: 24px;
+        color: $color-white;
+        height: 29px;
+    }
+}

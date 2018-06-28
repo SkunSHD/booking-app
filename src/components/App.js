@@ -7,10 +7,8 @@ import Dashboard from 'components/Dashboard.component';
 export default class App extends Component {
     render() {
         return (
-            <div className={styles.app}>
-                <div className="page-content">
-                    <Dashboard />
-                </div>
+            <div className={`container ${styles.app}`}>
+                <Dashboard />
             </div>
         );
     }

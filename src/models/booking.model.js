@@ -19,7 +19,7 @@ class BookingModel {
         const respRaw = await fetch('https://interview-booking-api.herokuapp.com/api/booking-snapshot');
         const respParsed = await respRaw.json();
 
-        runInAction('UPDATE-BookingModel', ()=> {
+        runInAction('UPDATE-BookingModel-SUCCESS', ()=> {
             for(let prop of keys(this.booking)) {
                 if(respParsed.hasOwnProperty(prop)) {
                     this.booking.set(prop, respParsed[prop]);

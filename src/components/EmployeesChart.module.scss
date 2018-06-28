@@ -1,0 +1,49 @@
+@import '../styles/vars';
+
+
+.employeeChart :global {
+
+    .title {
+        font-size: 17px;
+        color: $color-white;
+        font-weight: 500;
+        margin-bottom: 30px;
+    }
+
+
+    .item {
+        height: 33px;
+        margin: 0 0 17px 0;
+
+        .img-profile-wrapper {
+            overflow: hidden;
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+
+    .item_info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        .info_name {
+            color: $color-white;
+            line-height: 18px;
+        }
+
+        .info_hours {
+            line-height: 18px;
+        }
+    }
+
+}
+
