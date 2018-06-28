@@ -23,30 +23,30 @@ class EmployeesChart extends Component {
 
     render() {
         if(!employeesModel.employeesStats.size) return 'loading...';
+
         return (
             <div className="row">
                 <div className={ styles.employeeChart }>
                     <h2 className="title">Employees stats:</h2>
-                    <ul className="col-xs-8">
+                    <div className="col-xs-8">
                         { this.renderEmployeesTopThree.map(employee => (
-                            <li key={employee.firstName} className="item">
+                            <div className="row" key={employee.firstName}>
+                                <div className="item">
+                                    <div className="col-xs-2">
+                                        <div className="img-profile-wrapper">
+                                            <img src={employee.profileImageUrl} alt="profile photo"/>
+                                        </div>
+                                    </div>
+                                    <div className="col-xs-10 item_info">
+                                        <p className="info_name">{ employee.firstName } { employee.lastName.charAt(0) }.</p>
+                                        <p className="info_hours">{ employee.hoursSold } hours</p>
 
-                                <div className="col-xs-2">
-                                    <div className="img-profile-wrapper">
-                                        <img src={employee.profileImageUrl} alt="profile photo"/>
+                                        <ProgressEmployee hoursSold={ employee.hoursSold } />
                                     </div>
                                 </div>
-
-                                <div className="col-xs-10 item_info">
-                                    <p className="info_name">{ employee.firstName } { employee.lastName.charAt(0) }.</p>
-                                    <p className="info_hours">{ employee.hoursSold } hours</p>
-
-
-                                    <ProgressEmployee hoursSold={ employee.hoursSold } />
-                                </div>
-                            </li>
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 </div>
             </div>
         );
