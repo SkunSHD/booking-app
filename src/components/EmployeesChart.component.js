@@ -31,7 +31,9 @@ class EmployeesChart extends Component {
                 <div className={ styles.employeeChart }>
                     <h2 className="title">Employees stats:</h2>
                     <div className="col-xs-8">
-                        { this.renderEmployeesTopThree.map(employee => <EmployeeChartItem employee={employee} key={employee.firstName} />) }
+                        { this.renderEmployeesTopThree.map(employee =>
+                            <EmployeeChartItem employee={employee} key={employee.firstName} />)
+                        }
                     </div>
                 </div>
             </div>
