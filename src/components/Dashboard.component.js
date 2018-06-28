@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 // Components
 import BookingInfo from 'components/BookingInfo.component';
 import EmployeesChart from 'components/EmployeesChart.component';

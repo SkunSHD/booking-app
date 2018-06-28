@@ -1,7 +1,7 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 // Components
-import ProgressEmployee from "components/ProgressEmployee.component";
+import ProgressEmployee from 'components/ProgressEmployee.component';
 
 
 class EmployeeChartItem extends PureComponent {

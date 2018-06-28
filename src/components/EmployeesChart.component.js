@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 //MobX
 import { toJS } from 'mobx';
 import { observer } from 'mobx-react';
@@ -6,7 +6,7 @@ import { observer } from 'mobx-react';
 import employeesModel from 'models/employees.model';
 import styles from './EmployeesChart.module.scss';
 // Components
-import EmployeeChartItem from "components/EmployeeChartItem.component";
+import EmployeeChartItem from 'components/EmployeeChartItem.component';
 
 
 @observer

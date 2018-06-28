@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import styles from './App.module.scss';
 //Components
 import Dashboard from 'components/Dashboard.component';

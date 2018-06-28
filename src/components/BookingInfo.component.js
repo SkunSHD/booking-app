@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { keys } from 'mobx';
 import styles from './BookingInfo.module.scss';
 //MobX
