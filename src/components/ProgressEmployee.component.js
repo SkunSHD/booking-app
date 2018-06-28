@@ -1,12 +1,16 @@
 import React, { Component } from "react";
-//MobX
-import { observer } from 'mobx-react';
+import PropTypes from 'prop-types';
 // Models
 import styles from './ProgressEmployee.module.scss';
 
 
-@observer
 class ProgressEmployee extends Component {
+
+    static displayName = 'ProgressEmployee.component';
+
+    static propTypes = {
+        hoursSold: PropTypes.number.isRequired
+    };
 
     get width() { return `${this.props.hoursSold * 100 / 1000 }%` };
 

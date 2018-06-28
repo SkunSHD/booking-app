@@ -12,6 +12,8 @@ import ProgressEmployee from "components/ProgressEmployee.component";
 @observer
 class EmployeesChart extends Component {
 
+    static displayName = 'EmployeesChart.component';
+
 
     get renderEmployeesTopThree() {
         const employees = toJS(employeesModel.employeesStats);
