@@ -6,7 +6,7 @@ import { observer } from 'mobx-react';
 import employeesModel from 'models/employees.model';
 import styles from './EmployeesChart.module.scss';
 // Components
-import ProgressEmployee from "components/ProgressEmployee.component";
+import EmployeeChartItem from "components/EmployeeChartItem.component";
 
 
 @observer
@@ -31,23 +31,7 @@ class EmployeesChart extends Component {
                 <div className={ styles.employeeChart }>
                     <h2 className="title">Employees stats:</h2>
                     <div className="col-xs-8">
-                        { this.renderEmployeesTopThree.map(employee => (
-                            <div className="row" key={employee.firstName}>
-                                <div className="item">
-                                    <div className="col-xs-2">
-                                        <div className="img-profile-wrapper">
-                                            <img src={employee.profileImageUrl} alt="profile photo"/>
-                                        </div>
-                                    </div>
-                                    <div className="col-xs-10 item_info">
-                                        <p className="info_name">{ employee.firstName } { employee.lastName.charAt(0) }.</p>
-                                        <p className="info_hours">{ employee.hoursSold } hours</p>
-
-                                        <ProgressEmployee hoursSold={ employee.hoursSold } />
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                        { this.renderEmployeesTopThree.map(employee => <EmployeeChartItem employee={employee} key={employee.firstName} />) }
                     </div>
                 </div>
             </div>

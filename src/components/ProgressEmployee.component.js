@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import PropTypes from 'prop-types';
 // Models
 import styles from './ProgressEmployee.module.scss';
 
 
-class ProgressEmployee extends Component {
+class ProgressEmployee extends PureComponent {
 
     static displayName = 'ProgressEmployee.component';
 
