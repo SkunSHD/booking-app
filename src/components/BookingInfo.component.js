@@ -10,6 +10,8 @@ import bookingModel from 'models/booking.model';
 @observer
 class BookingInfo extends Component {
 
+    static displayName = 'BookingInfo.component';
+
     infoTitles = {
         checkedIn: 'Checked in',
         availableRooms: 'Rooms available',
