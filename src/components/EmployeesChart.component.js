@@ -22,14 +22,14 @@ class EmployeesChart extends Component {
         if(!employeesModel.employeesStats.size) return 'loading...';
         return (
             <div className="container">
-                <div className="row">
-                    Employees stats:
-                    { this.renderEmployeesTopThree.map(employee => (
-                        <div key={employee.firstName} className="col-lg">
+                Employees stats:
+                { this.renderEmployeesTopThree.map(employee => (
+                    <div key={employee.firstName} className="row" >
+                        <div className="col-lg">
                             <p>{employee.firstName} {employee.lastName}; SOLD: {employee.hoursSold} hours</p>
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </div>
         );
     }

@@ -21,13 +21,12 @@ class BookingInfo extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    {  keys(bookingModel.booking).map(bookingKey =>
-                            <div className="col-sm" key={bookingKey}>
-                                <p>{bookingModel.booking.get(bookingKey)}</p>
-                                <p>{this.infoTitles[bookingKey]}</p>
-                            </div>
-                    )
-                    }
+                    { keys(bookingModel.booking).map(bookingKey =>
+                        <div className="col-sm" key={bookingKey}>
+                            <p>{bookingModel.booking.get(bookingKey)}</p>
+                            <p>{this.infoTitles[bookingKey]}</p>
+                        </div>
+                    )}
                 </div>
             </div>
         );
