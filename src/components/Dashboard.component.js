@@ -19,10 +19,10 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div className="layout__align-center">
+            <React.Fragment>
                 <BookingInfo />
                 <EmployeesChart />
-            </div>
+            </React.Fragment>
         )
     };
 }

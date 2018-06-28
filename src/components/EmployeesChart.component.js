@@ -19,13 +19,16 @@ class EmployeesChart extends Component {
 
 
     render() {
+        if(!employeesModel.employeesStats.size) return 'loading...';
         return (
-            <div>
-                <div>
-                   Employees stats:
-                    {this.renderEmployeesTopThree.map(employee => <div>
-                        <p>{employee.firstName} {employee.lastName}; SOLD: {employee.hoursSold} hours</p>
-                    </div>)}
+            <div className="container">
+                <div className="row">
+                    Employees stats:
+                    { this.renderEmployeesTopThree.map(employee => (
+                        <div key={employee.firstName} className="col-lg">
+                            <p>{employee.firstName} {employee.lastName}; SOLD: {employee.hoursSold} hours</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         );

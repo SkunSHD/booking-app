@@ -1,9 +1,9 @@
-import { observable, runInAction, keys, values } from 'mobx';
+import { observable, runInAction, keys } from 'mobx';
 
 
 class BookingModel {
 
-    booking = observable.map(new Map([
+    booking = observable(new Map([
         ['availableRooms', null],
         ['checkedIn', null],
         ['reservedRooms', null]
@@ -20,7 +20,11 @@ class BookingModel {
         const respParsed = await respRaw.json();
 
         runInAction('UPDATE-BookingModel', ()=> {
-
+            for(let prop of keys(this.booking)) {
+                if(respParsed.hasOwnProperty(prop)) {
+                    this.booking.set(prop, respParsed[prop]);
+                }
+            }
         });
     }
 }

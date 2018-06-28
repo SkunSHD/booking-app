@@ -17,19 +17,18 @@ class BookingInfo extends Component {
 
 
     render() {
+        if(!bookingModel.booking.size) return 'loading...'
         return (
-            <div>
-                <div>
-                    { keys(bookingModel.booking)
-                        .map(bookingKey =>
-                            <div key={bookingKey}>
+            <div className="container">
+                <div className="row">
+                    {  keys(bookingModel.booking).map(bookingKey =>
+                            <div className="col-sm" key={bookingKey}>
                                 <p>{bookingModel.booking.get(bookingKey)}</p>
                                 <p>{this.infoTitles[bookingKey]}</p>
                             </div>
-                        )
+                    )
                     }
                 </div>
-
             </div>
         );
     }
