@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './ProgressEmployee.module.scss';
 
 
-class ProgressEmployee extends PureComponent {
+export default class ProgressEmployee extends PureComponent {
 
     static displayName = 'ProgressEmployee.component';
 
@@ -18,10 +18,8 @@ class ProgressEmployee extends PureComponent {
     render() {
         return (
             <div className={ styles.progressEmployee }>
-                <div className="content" style={{ width: this.width }} />
+                <div className="progress_bar" style={{ width: this.width }} />
             </div>
         );
     }
 }
-
-export default ProgressEmployee;

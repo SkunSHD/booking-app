@@ -28,13 +28,12 @@ class EmployeesChart extends Component {
 
         return (
             <div className="row">
-                <div className={ styles.employeeChart }>
-                    <h2 className="title">Employees stats:</h2>
-                    <div className="col-xs-8">
-                        { this.renderEmployeesTopThree.map(employee =>
-                            <EmployeeChartItem employee={employee} key={employee.lastName} />)
-                        }
-                    </div>
+                <div className="col-xs-8">
+                    <h2 className={styles.employee_chart__title}>Employees stats:</h2>
+
+                    { this.renderEmployeesTopThree.map(employee =>
+                        <EmployeeChartItem employee={employee} key={employee.lastName} />)
+                    }
                 </div>
             </div>
         );
