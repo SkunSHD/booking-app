@@ -1,2 +1,3 @@
 Tricky input:
-https://codesandbox.io/s/zkr31nqmy4
+on React: https://codesandbox.io/s/nwynrxjw9j
+on MobX:  https://codesandbox.io/s/zkr31nqmy4
